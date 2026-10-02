@@ -44,8 +44,12 @@ public final class Configs {
 
     @Config
     public static class ShooterConfig {
-        public static final String MOTOR_NAME = "shooterMotor";
+        public static final String RIGHT_MOTOR_NAME = "rightShooter";
+        public static final String LEFT_MOTOR_NAME = "leftShooter";
+        public static final String INTAKE_MOTOR_NAME = "intake";
+        public static final String INDEX_MOTOR_NAME = "index";
 
+        // One shared set of gains drives both flywheel motors' self-rolled velocity PID loops.
         public static double kP = 0.0004;
         public static double kI = 0.0;
         public static double kD = 0.0;
@@ -54,6 +58,11 @@ public final class Configs {
         public static double IDLE_VELOCITY = 0;
         public static double SHOOT_VELOCITY = 1650;
         public static double VELOCITY_TOLERANCE = 40;
+
+        public static final double INTAKE_POWER = 1.0;
+        public static final double INTAKE_REVERSE_POWER = -1.0;
+        public static final double INDEX_POWER = 1.0;
+        public static final double INDEX_REVERSE_POWER = -1.0;
     }
 
     public static class IntakeConfig {
